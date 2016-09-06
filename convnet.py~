@@ -77,5 +77,6 @@ history = model.fit(X_train, y_train,
                     verbose=1, validation_data=(X_val, y_val),
                     shuffle=True, callbacks=[early])
 
-model.save('convnet_aws.kerasmodel')
+model.save('convnet_val_loss=' +\
+           str(np.round(history.history['val_loss'][-1], 4)) + '.kerasmodel')
 
